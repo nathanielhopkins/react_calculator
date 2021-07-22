@@ -18,23 +18,33 @@ class Calculator extends React.Component {
     this.divide = this.divide.bind(this);
   }
 
-  add() {
+  add(e) {
+    e.preventDefault();
+
     this.setState({result: this.state.num1 + this.state.num2});
   }
 
-  divide() {
+  divide(e) {
+    e.preventDefault();
+
     this.setState({result: this.state.num1 / this.state.num2});
   }
 
-  multiply() {
+  multiply(e) {
+    e.preventDefault();
+
     this.setState({result: this.state.num1 * this.state.num2});
   }
 
-  subtract() {
+  subtract(e) {
+    e.preventDefault();
+
     this.setState({result: this.state.num1 - this.state.num2});
   }
 
-  clear() {
+  clear(e) {
+    e.preventDefault();
+
     this.setState({
       result: 0,
       num1: "",
