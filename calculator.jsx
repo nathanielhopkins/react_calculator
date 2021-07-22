@@ -15,10 +15,15 @@ class Calculator extends React.Component {
     this.add = this.add.bind(this);
     this.subtract = this.subtract.bind(this);
     this.multiply = this.multiply.bind(this);
+    this.divide = this.divide.bind(this);
   }
 
   add() {
     this.setState({result: this.state.num1 + this.state.num2});
+  }
+
+  divide() {
+    this.setState({result: this.state.num1 / this.state.num2});
   }
 
   multiply() {
@@ -71,7 +76,7 @@ class Calculator extends React.Component {
           <input type='button' value='+' onClick={this.add}></input>
           <input type='button' value='-' onClick={this.subtract}></input>
           <input type='button' value='*' onClick={this.multiply}></input>
-          <input type='button' value='/'></input>
+          <input type='button' value='/' onClick={this.divide}></input>
         </div>
 
         <p>{JSON.stringify(this.state)}</p>
