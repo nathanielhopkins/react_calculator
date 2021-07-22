@@ -11,6 +11,15 @@ class Calculator extends React.Component {
 
     this.setNum1 = this.setNum1.bind(this);
     this.setNum2 = this.setNum2.bind(this);
+    this.clear = this.clear.bind(this);
+  }
+
+  clear() {
+    this.setState({
+      result: 0,
+      num1: "",
+      num2: ""
+    });
   }
 
   setNum1(e) {
@@ -41,7 +50,7 @@ class Calculator extends React.Component {
         <div className="num-inputs">
           <input className='num1-input' type='text' onChange={this.setNum1} value={this.state.num1}></input>
           <input className='num2-input' type='text' onChange={this.setNum2} value={this.state.num2}></input>
-          <input type='button' value="Clear"></input>
+          <input type='button' value="Clear" onClick={this.clear}></input>
         </div>
 
         <p>{JSON.stringify(this.state)}</p>
