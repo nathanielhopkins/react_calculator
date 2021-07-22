@@ -8,9 +8,18 @@ class Calculator extends React.Component {
       num1: "",
       num2: ""
     }
+
+    this.setNum1.bind(this);
+    this.setNum2.bind(this);
   }
 
-  // your code here
+  setNum1(e) {
+    alert('num1 changed')
+  }
+
+  setNum2(e) {
+    alert('num2 changed')
+  }
 
   render() {
     return (
@@ -18,8 +27,8 @@ class Calculator extends React.Component {
         <h1>{this.state.result}</h1>
         
         <div className="num-inputs">
-          <input className='num1-input' type='text' onChange={() => alert('num1 changed')}></input>
-          <input className='num2-input' type='text' onChange={() => alert('num2 changed')}></input>
+          <input className='num1-input' type='text' onChange={this.setNum1}></input>
+          <input className='num2-input' type='text' onChange={this.setNum2}></input>
           <input type='button' value="Clear"></input>
         </div>
       </div>
