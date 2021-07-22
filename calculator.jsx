@@ -88,8 +88,6 @@ class Calculator extends React.Component {
           <input type='button' value='*' onClick={this.multiply}></input>
           <input type='button' value='/' onClick={this.divide}></input>
         </div>
-
-        <p>{JSON.stringify(this.state)}</p>
       </div>
     );
   }
