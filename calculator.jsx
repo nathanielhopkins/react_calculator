@@ -52,6 +52,12 @@ class Calculator extends React.Component {
           <input className='num2-input' type='text' onChange={this.setNum2} value={this.state.num2}></input>
           <input type='button' value="Clear" onClick={this.clear}></input>
         </div>
+        <div className='operator-buttons'>
+          <input type='button' value='+'></input>
+          <input type='button' value='-'></input>
+          <input type='button' value='*'></input>
+          <input type='button' value='/'></input>
+        </div>
 
         <p>{JSON.stringify(this.state)}</p>
       </div>
