@@ -14,13 +14,18 @@ class Calculator extends React.Component {
     this.clear = this.clear.bind(this);
     this.add = this.add.bind(this);
     this.subtract = this.subtract.bind(this);
+    this.multiply = this.multiply.bind(this);
   }
 
-  add () {
+  add() {
     this.setState({result: this.state.num1 + this.state.num2});
   }
 
-  subtract () {
+  multiply() {
+    this.setState({result: this.state.num1 * this.state.num2});
+  }
+
+  subtract() {
     this.setState({result: this.state.num1 - this.state.num2});
   }
 
@@ -65,7 +70,7 @@ class Calculator extends React.Component {
         <div className='operator-buttons'>
           <input type='button' value='+' onClick={this.add}></input>
           <input type='button' value='-' onClick={this.subtract}></input>
-          <input type='button' value='*'></input>
+          <input type='button' value='*' onClick={this.multiply}></input>
           <input type='button' value='/'></input>
         </div>
 
