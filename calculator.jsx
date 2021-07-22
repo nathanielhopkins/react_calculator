@@ -9,16 +9,28 @@ class Calculator extends React.Component {
       num2: ""
     }
 
-    this.setNum1.bind(this);
-    this.setNum2.bind(this);
+    this.setNum1 = this.setNum1.bind(this);
+    this.setNum2 = this.setNum2.bind(this);
   }
 
   setNum1(e) {
-    alert('num1 changed')
+    let num1;
+    if(e.target.value == '') {
+      num1 = '';
+    } else {
+      num1 = parseFloat(e.target.value);
+    };
+    this.setState({num1});
   }
 
   setNum2(e) {
-    alert('num2 changed')
+    let num2;
+    if (e.target.value == '') {
+      num2 = '';
+    } else {
+      num2 = parseFloat(e.target.value);
+    };
+    this.setState({num2});
   }
 
   render() {
@@ -27,10 +39,12 @@ class Calculator extends React.Component {
         <h1>{this.state.result}</h1>
         
         <div className="num-inputs">
-          <input className='num1-input' type='text' onChange={this.setNum1}></input>
-          <input className='num2-input' type='text' onChange={this.setNum2}></input>
+          <input className='num1-input' type='text' onChange={this.setNum1} value={this.state.num1}></input>
+          <input className='num2-input' type='text' onChange={this.setNum2} value={this.state.num2}></input>
           <input type='button' value="Clear"></input>
         </div>
+
+        <p>{JSON.stringify(this.state)}</p>
       </div>
     );
   }
